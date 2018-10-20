@@ -20,8 +20,31 @@ public class main : MonoBehaviour
      * 4: blue round
      */
     static public int player = 0;
+    /* count which kind of blok is choosen
+     * 
+     * too many of them (20 types)
+     * I woun't write all of them here
+     * LOL
+     */
     static public int blok = 0;
-    static public int condition = 1;
+    /* which side is choosen
+     * 
+     * 1 the front side (the side players can see)
+     * 2 the back side
+     * 
+     * # some bloks may not have all sides
+     */
+    static public int side = 1;
+    /* which angle is choosen
+     * 
+     * 1 no change
+     * 2 turn right for 90'
+     * 3 upside down
+     * 4 turn left for 90'
+     * 
+     * # some bloks may not have all angles
+     */
+    static public int angle = 1;
 
     void Awake()
     {
@@ -37,7 +60,7 @@ public class main : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

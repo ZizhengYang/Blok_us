@@ -51,16 +51,12 @@ public class bloks : MonoBehaviour {
     {
         whatIsCurrentColor(main.player);
 
-        howToDisplay(main.blok, main.condition);
+        howToDisplay(main.blok, main.side, main.angle);
     }
 
     public void OnMouseExit()
     {
-        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
-        foreach (MeshRenderer m in marr)
-        {
-            m.enabled = false;
-        }
+        howToHide(main.blok, main.side, main.angle);
     }
     //=========================================================================
 
@@ -89,56 +85,109 @@ public class bloks : MonoBehaviour {
         }
     }
 
-    private void howToDisplay(int index, int condition)
+    private void howToDisplay(int index, int side, int angle)
     {
         if (index == 0)
         {
-            special_condition();
+            S_special_condition();
         }
         else if (index == 9)
         {
-            if (condition == 1)
+            if (side == 1 && angle == 1)
             {
-                Blok9_side1_angle1();
+                S_Blok9_side1_angle1();
             }
-            else if (condition == 2)
+            else if (side == 1 && angle == 2)
             {
-                Blok9_side1_angle2();
+                S_Blok9_side1_angle2();
             }
-            else if (condition == 3)
+            else if (side == 1 && angle == 3)
             {
-                Blok9_side1_angle3();
+                S_Blok9_side1_angle3();
             }
-            else if (condition == 4)
+            else if (side == 1 && angle == 4)
             {
-                Blok9_side1_angle4();
+                S_Blok9_side1_angle4();
             }
-            else if (condition == 5)
+            else if (side == 2 && angle == 1)
             {
-                Blok9_side2_angle1();
+                S_Blok9_side2_angle1();
             }
-            else if (condition == 6)
+            else if (side == 2 && angle == 2)
             {
-                Blok9_side2_angle2();
+                S_Blok9_side2_angle2();
             }
-            else if (condition == 7)
+            else if (side == 2 && angle == 3)
             {
-                Blok9_side2_angle3();
+                S_Blok9_side2_angle3();
             }
-            else if (condition == 8)
+            else if (side == 2 && angle == 4)
             {
-                Blok9_side2_angle4();
+                S_Blok9_side2_angle4();
             }
         }
     }
 
-    private void howToHide(int index)
+    private void howToHide(int index, int side, int angle)
     {
-
+        if (index == 0)
+        {
+            H_special_condition();
+        }
+        else if (index == 9)
+        {
+            if (side == 1 && angle == 1)
+            {
+                H_Blok9_side1_angle1();
+            }
+            else if (side == 1 && angle == 2)
+            {
+                H_Blok9_side1_angle2();
+            }
+            else if (side == 1 && angle == 3)
+            {
+                H_Blok9_side1_angle3();
+            }
+            else if (side == 1 && angle == 4)
+            {
+                H_Blok9_side1_angle4();
+            }
+            else if (side == 2 && angle == 1)
+            {
+                H_Blok9_side2_angle1();
+            }
+            else if (side == 2 && angle == 2)
+            {
+                H_Blok9_side2_angle2();
+            }
+            else if (side == 2 && angle == 3)
+            {
+                H_Blok9_side2_angle3();
+            }
+            else if (side == 2 && angle == 4)
+            {
+                H_Blok9_side2_angle4();
+            }
+        }
     }
     //=========================================================================
 
     //=========================================================================
+    static private char IntToChar(int i)
+    {
+        char c = ' ';
+
+        if (i == 0)
+        {
+            c = '0';
+        }
+        else
+        {
+            c = (char)(i + 48);
+        }
+
+        return c;
+    }
     private void gameobjectToZero()
     {
         obj1 = null;
@@ -147,32 +196,34 @@ public class bloks : MonoBehaviour {
         obj4 = null;
     }
 
-    private char[] blokCoordinate(char[] temp, int Xoffset, int Yoffset)
+    private string blokCoordinate(char[] temp, int Xoffset, int Yoffset)
     {
-        char[] newarray = new char[temp.Length];
-        newarray = temp;
+        string newstring = "";
 
         int tempX = 0;
         int tempY = 0;
 
-        tempX = (int)(temp[5] * 10) + (int)(temp[6]);
-        tempY = (int)(temp[9] * 10) + (int)(temp[10]);
+        tempX = (temp[5] - '0') * 10 + (temp[6] - '0');
+        tempY = (temp[9] - '0') * 10 + (temp[10] - '0');
 
         tempX = tempX + Xoffset;
         tempY = tempY + Yoffset;
 
-        newarray[5] = (char)(tempX / 10);
-        newarray[6] = (char)(tempX % 10);
-        newarray[9] = (char)(tempY / 10);
-        newarray[10] = (char)(tempY % 10);
+        newstring += "blok(";
+        newstring += IntToChar(tempX / 10);
+        newstring += IntToChar(tempX % 10);
+        newstring += ")(";
+        newstring += IntToChar(tempY / 10);
+        newstring += IntToChar(tempY % 10);
+        newstring += ")";
 
-        return newarray;
+        return newstring;
     }
     //=========================================================================
 
     //=========================================================================
     //-------------------------------------------------------------------------
-    private void special_condition()
+    private void S_special_condition()
     {
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -180,67 +231,142 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
     }
+    private void H_special_condition()
+    {
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+    }
     //-------------------------------------------------------------------------
-    private void Blok9_side1_angle1()
+    private void S_Blok9_side1_angle1()
     {
         // initializing
         char[] temp = new char[objName.Length];
+        temp = objName;
 
-        obj1 = GameObject.Find("" + blokCoordinate(temp, -1, 0));
-        obj2 = GameObject.Find("" + blokCoordinate(temp, 0, -1));
-        obj3 = GameObject.Find("" + blokCoordinate(temp, 0, -2));
-        /*
+        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
         {
             m.enabled = true;
         }
         MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
-        foreach (MeshRenderer m in marr)
+        foreach (MeshRenderer m in marr1)
         {
             m.enabled = true;
         }
         MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
-        foreach (MeshRenderer m in marr)
+        foreach (MeshRenderer m in marr2)
         {
             m.enabled = true;
         }
         MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(false);
-        foreach (MeshRenderer m in marr)
+        foreach (MeshRenderer m in marr3)
         {
             m.enabled = true;
         }
-        */
+        
         gameobjectToZero();
     }
-    private void Blok9_side1_angle2()
+    private void S_Blok9_side1_angle2()
     {
 
     }
-    private void Blok9_side1_angle3()
+    private void S_Blok9_side1_angle3()
     {
 
     }
-    private void Blok9_side1_angle4()
+    private void S_Blok9_side1_angle4()
     {
 
     }
-    private void Blok9_side2_angle1()
+    private void S_Blok9_side2_angle1()
     {
 
     }
-    private void Blok9_side2_angle2()
+    private void S_Blok9_side2_angle2()
     {
 
     }
-    private void Blok9_side2_angle3()
+    private void S_Blok9_side2_angle3()
     {
 
     }
-    private void Blok9_side2_angle4()
+    private void S_Blok9_side2_angle4()
+    {
+
+    }
+    
+    private void H_Blok9_side1_angle1()
+    {
+        // initializing
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr1)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr2)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr3)
+        {
+            m.enabled = false;
+        }
+
+        gameobjectToZero();
+    }
+    private void H_Blok9_side1_angle2()
+    {
+
+    }
+    private void H_Blok9_side1_angle3()
+    {
+
+    }
+    private void H_Blok9_side1_angle4()
+    {
+
+    }
+    private void H_Blok9_side2_angle1()
+    {
+
+    }
+    private void H_Blok9_side2_angle2()
+    {
+
+    }
+    private void H_Blok9_side2_angle3()
+    {
+
+    }
+    private void H_Blok9_side2_angle4()
     {
 
     }
     //-------------------------------------------------------------------------
+    //=========================================================================
+
+    //=========================================================================
+
     //=========================================================================
 }
