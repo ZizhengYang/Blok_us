@@ -11,6 +11,7 @@ public class main : MonoBehaviour
     bool[] visableB = new bool[22];
     char[] blokname = new char[20];
 
+    // default values
     /* count which is playing
      * 
      * 1: yellow round
