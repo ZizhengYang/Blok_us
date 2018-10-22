@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class main : MonoBehaviour
 {
-
+    //=========================================================================
     bool[] visableY = new bool[22];
     bool[] visableR = new bool[22];
     bool[] visableG = new bool[22];
     bool[] visableB = new bool[22];
     char[] blokname = new char[20];
 
+    public bool PoE = false;
     // default values
     /* count which is playing
      * 
@@ -45,7 +46,9 @@ public class main : MonoBehaviour
      * # some bloks may not have all angles
      */
     static public int angle = 1;
+    //=========================================================================
 
+    //=========================================================================
     void Awake()
     {
         for(int i = 0; i < 22; i++)
@@ -69,10 +72,15 @@ public class main : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             findBlok();
+
             print(blok);
         }
-    }
 
+        keyboard();
+    }
+    //=========================================================================
+
+    //=========================================================================
     public void findBlok()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -165,4 +173,59 @@ public class main : MonoBehaviour
             }
         }
     }
+    //=========================================================================
+
+    //=========================================================================
+    private void keyboard()
+    {
+        //--------------------------------starting the game
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if(PoE == false)
+            {
+                player = 1;
+            }
+            else
+            {
+                player = 0;
+            }
+            PoE = !PoE;
+        }
+        //--------------------------------
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            side += 1;
+            if(side > 2)
+            {
+                side = 1;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            side -= 1;
+            if(side < 1)
+            {
+                side = 2;
+            }
+        }
+        //--------------------------------
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            angle += 1;
+            if (angle > 4)
+            {
+                angle = 1;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            angle -= 1;
+            if (angle < 1)
+            {
+                angle = 4;
+            }
+        }
+        //--------------------------------
+    }
+    //=========================================================================
 }
