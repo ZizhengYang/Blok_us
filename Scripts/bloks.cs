@@ -126,6 +126,10 @@ public class bloks : MonoBehaviour {
                 S_Blok9_side2_angle4();
             }
         }
+        else if (index == 20)
+        {
+            S_Blok20_side1_angle1();
+        }
     }
 
     private void howToHide(int index, int side, int angle)
@@ -168,6 +172,10 @@ public class bloks : MonoBehaviour {
             {
                 H_Blok9_side2_angle4();
             }
+        }
+        else if (index == 20)
+        {
+            H_Blok20_side1_angle1();
         }
     }
     //=========================================================================
@@ -242,13 +250,20 @@ public class bloks : MonoBehaviour {
     //-------------------------------------------------------------------------
     private void S_Blok9_side1_angle1()
     {
-        // initializing
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        try
+        {
+            obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+            obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+            obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        }
+        catch (System.NullReferenceException e)
+        {
+            print("I find an exception");
+            goto byebye;
+        }
         
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -271,46 +286,53 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
         
+        byebye:
         gameobjectToZero();
     }
     private void S_Blok9_side1_angle2()
     {
-
+        
     }
     private void S_Blok9_side1_angle3()
     {
-
+        
     }
     private void S_Blok9_side1_angle4()
     {
-
+        
     }
     private void S_Blok9_side2_angle1()
     {
-
+        
     }
     private void S_Blok9_side2_angle2()
     {
-
+        
     }
     private void S_Blok9_side2_angle3()
     {
-
+        
     }
     private void S_Blok9_side2_angle4()
     {
-
+        
     }
     
     private void H_Blok9_side1_angle1()
     {
-        // initializing
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        try
+        {
+            obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+            obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+            obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        }
+        catch (System.NullReferenceException e)
+        {
+            goto byebye;
+        }
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -333,35 +355,129 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
+        byebye:
         gameobjectToZero();
     }
     private void H_Blok9_side1_angle2()
     {
-
+        
     }
     private void H_Blok9_side1_angle3()
     {
-
+        
     }
     private void H_Blok9_side1_angle4()
     {
-
+        
     }
     private void H_Blok9_side2_angle1()
     {
-
+        
     }
     private void H_Blok9_side2_angle2()
     {
-
+        
     }
     private void H_Blok9_side2_angle3()
     {
-
+        
     }
     private void H_Blok9_side2_angle4()
     {
+        
+    }
+    //-------------------------------------------------------------------------
+    private void S_Blok20_side1_angle1()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
 
+        try
+        {
+            obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+            obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+            obj3 = GameObject.Find(blokCoordinate(temp, 1, 0));
+            obj4 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        }
+        catch (System.NullReferenceException e)
+        {
+            goto byebye;
+        }
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = true;
+        }
+        MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr1)
+        {
+            m.enabled = true;
+        }
+        MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr2)
+        {
+            m.enabled = true;
+        }
+        MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr3)
+        {
+            m.enabled = true;
+        }
+        MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr4)
+        {
+            m.enabled = true;
+        }
+
+        byebye:
+        gameobjectToZero();
+    }
+    private void H_Blok20_side1_angle1()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        try
+        {
+            obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+            obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
+            obj3 = GameObject.Find(blokCoordinate(temp, 1, 0));
+            obj4 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        }
+        catch (System.NullReferenceException e)
+        {
+            goto byebye;
+        }
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr1)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr2)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr3)
+        {
+            m.enabled = false;
+        }
+        MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr4)
+        {
+            m.enabled = false;
+        }
+
+        byebye:
+        gameobjectToZero();
     }
     //-------------------------------------------------------------------------
     //=========================================================================
