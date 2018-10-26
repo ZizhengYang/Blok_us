@@ -92,6 +92,10 @@ public class bloks : MonoBehaviour {
         {
             S_special_condition();
         }
+        else if (index == 1)
+        {
+            S_Blok1_side1_angle1();
+        }
         else if (index == 4)
         {
             if (angle == 1 || angle == 3)
@@ -138,6 +142,17 @@ public class bloks : MonoBehaviour {
                 S_Blok9_side2_angle4();
             }
         }
+        else if (index == 15)
+        {
+            if (angle == 1 || angle == 3)
+            {
+                S_Blok15_side1_angle1();
+            }
+            else if (angle == 2 || angle == 4)
+            {
+                S_Blok15_side1_angle2();
+            }
+        }
         else if (index == 20)
         {
             S_Blok20_side1_angle1();
@@ -149,6 +164,10 @@ public class bloks : MonoBehaviour {
         if (index == 0)
         {
             H_special_condition();
+        }
+        else if (index == 1)
+        {
+            H_Blok1_side1_angle1();
         }
         else if (index == 4)
         {
@@ -194,6 +213,17 @@ public class bloks : MonoBehaviour {
             else if (side == 2 && angle == 4)
             {
                 H_Blok9_side2_angle4();
+            }
+        }
+        else if (index == 15)
+        {
+            if (angle == 1 || angle == 3)
+            {
+                H_Blok15_side1_angle1();
+            }
+            else if (angle == 2 || angle == 4)
+            {
+                H_Blok15_side1_angle2();
             }
         }
         else if (index == 20)
@@ -263,6 +293,23 @@ public class bloks : MonoBehaviour {
         }
     }
     private void H_special_condition()
+    {
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+    }
+    //-------------------------------------------------------------------------
+    private void S_Blok1_side1_angle1()
+    {
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = true;
+        }
+    }
+    private void H_Blok1_side1_angle1()
     {
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -567,6 +614,240 @@ public class bloks : MonoBehaviour {
     private void H_Blok9_side2_angle4()
     {
         
+    }
+    //-------------------------------------------------------------------------
+    private void S_Blok15_side1_angle1()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
+        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        obj4 = GameObject.Find(blokCoordinate(temp, 2, 0));
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = true;
+        }
+
+        if (obj1 != null)
+        {
+            MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
+            foreach (MeshRenderer m in marr1)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj2 != null)
+        {
+            MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
+            foreach (MeshRenderer m in marr2)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj3 != null)
+        {
+            MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr3)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj4 != null)
+        {
+            MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr4)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        gameobjectToZero();
+    }
+    private void S_Blok15_side1_angle2()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj3 = GameObject.Find(blokCoordinate(temp, 0, -2));
+        obj4 = GameObject.Find(blokCoordinate(temp, 0, 2));
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = true;
+        }
+
+        if (obj1 != null)
+        {
+            MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
+            foreach (MeshRenderer m in marr1)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj2 != null)
+        {
+            MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
+            foreach (MeshRenderer m in marr2)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj3 != null)
+        {
+            MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr3)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        if (obj4 != null)
+        {
+            MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr4)
+            {
+                m.enabled = true;
+            }
+        }
+        else { }
+
+        gameobjectToZero();
+    }
+    private void H_Blok15_side1_angle1()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
+        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        obj4 = GameObject.Find(blokCoordinate(temp, 2, 0));
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+
+        if (obj1 != null)
+        {
+            MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr1)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj2 != null)
+        {
+            MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr2)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj3 != null)
+        {
+            MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr3)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj4 != null)
+        {
+            MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr4)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        gameobjectToZero();
+    }
+
+    private void H_Blok15_side1_angle2()
+    {
+        char[] temp = new char[objName.Length];
+        temp = objName;
+
+        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj3 = GameObject.Find(blokCoordinate(temp, 0, -2));
+        obj4 = GameObject.Find(blokCoordinate(temp, 0, 2));
+
+        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer m in marr)
+        {
+            m.enabled = false;
+        }
+
+        if (obj1 != null)
+        {
+            MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr1)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj2 != null)
+        {
+            MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr2)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj3 != null)
+        {
+            MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr3)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        if (obj4 != null)
+        {
+            MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
+            foreach (MeshRenderer m in marr4)
+            {
+                m.enabled = false;
+            }
+        }
+        else { }
+
+        gameobjectToZero();
     }
     //-------------------------------------------------------------------------
     private void S_Blok20_side1_angle1()
