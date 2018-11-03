@@ -11,7 +11,8 @@ public class main : MonoBehaviour
     bool[] visableB = new bool[22];
     char[] blokname = new char[20];
 
-    public bool PoE = false;
+    //public bool PoE = false;
+
     // default values
     /* count which is playing
      * 
@@ -181,15 +182,11 @@ public class main : MonoBehaviour
         //--------------------------------starting the game
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if(PoE == false)
+            player++;
+            if (player > 4)
             {
                 player = 1;
             }
-            else
-            {
-                player = 0;
-            }
-            PoE = !PoE;
         }
         //--------------------------------
         if (Input.GetKeyDown(KeyCode.W))
@@ -226,6 +223,17 @@ public class main : MonoBehaviour
             }
         }
         //--------------------------------
+        if (Input.GetMouseButtonDown(1))
+        {
+            switch (blok)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+            bloks.setcanChange();
+        }
     }
     //=========================================================================
 }

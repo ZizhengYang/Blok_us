@@ -16,6 +16,7 @@ public class bloks : MonoBehaviour {
     // find the name of the GameObject described above
     private char[] objName = new char[12];
     private string ObjName;
+    private static Boolean canChange = true;
     //=========================================================================
 
     //=========================================================================
@@ -43,6 +44,14 @@ public class bloks : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        for(int i = 1; i < 21; i++)
+        {
+            for (int j = 1; j < 21; j++)
+            {
+
+            }
+        }
 
     }
     //=========================================================================
@@ -332,7 +341,7 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr1)
@@ -342,7 +351,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -378,7 +387,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -404,7 +413,7 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr1)
@@ -414,7 +423,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -441,7 +450,7 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr1)
@@ -451,7 +460,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -479,7 +488,7 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr1)
@@ -489,7 +498,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -499,7 +508,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr3)
@@ -555,7 +564,7 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr1)
@@ -565,7 +574,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -575,7 +584,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -632,7 +641,7 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr1)
@@ -642,7 +651,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -652,7 +661,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -662,7 +671,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr4)
@@ -690,7 +699,7 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr1)
@@ -700,7 +709,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -710,7 +719,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -720,7 +729,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr4)
@@ -748,7 +757,7 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr1)
@@ -758,7 +767,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -768,7 +777,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -778,7 +787,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr4)
@@ -817,7 +826,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -827,7 +836,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -837,7 +846,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr4)
@@ -866,7 +875,7 @@ public class bloks : MonoBehaviour {
             m.enabled = true;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr1)
@@ -876,7 +885,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr2)
@@ -886,7 +895,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr3)
@@ -896,7 +905,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(false);
             foreach (MeshRenderer m in marr4)
@@ -924,7 +933,7 @@ public class bloks : MonoBehaviour {
             m.enabled = false;
         }
 
-        if (obj1 != null)
+        if (obj1 != null && canChange == true)
         {
             MeshRenderer[] marr1 = obj1.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr1)
@@ -934,7 +943,7 @@ public class bloks : MonoBehaviour {
         }
         else{ }
 
-        if (obj2 != null)
+        if (obj2 != null && canChange == true)
         {
             MeshRenderer[] marr2 = obj2.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr2)
@@ -944,7 +953,7 @@ public class bloks : MonoBehaviour {
         }
         else{ }
 
-        if (obj3 != null)
+        if (obj3 != null && canChange == true)
         {
             MeshRenderer[] marr3 = obj3.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr3)
@@ -954,7 +963,7 @@ public class bloks : MonoBehaviour {
         }
         else { }
 
-        if (obj4 != null)
+        if (obj4 != null && canChange == true)
         {
             MeshRenderer[] marr4 = obj4.GetComponentsInChildren<MeshRenderer>(true);
             foreach (MeshRenderer m in marr4)
@@ -972,4 +981,9 @@ public class bloks : MonoBehaviour {
     //=========================================================================
 
     //=========================================================================
+
+    public static void setcanChange()
+    {
+        canChange = false;
+    }
 }
