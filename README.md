@@ -7,8 +7,8 @@ the material that used in the game
 
 ====================================================
 scripts:
-the C# scripts
----------------------------
+
+
 howCameraMove.cs:
     the movement of the camera
 bloks.cs:
