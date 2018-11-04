@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class main : MonoBehaviour
 {
-    //=========================================================================
-    bool[] visableY = new bool[22];
-    bool[] visableR = new bool[22];
-    bool[] visableG = new bool[22];
-    bool[] visableB = new bool[22];
-    char[] blokname = new char[20];
-
-    //public bool PoE = false;
-
     // default values
     /* count which is playing
      * 
@@ -52,13 +43,7 @@ public class main : MonoBehaviour
     //=========================================================================
     void Awake()
     {
-        for(int i = 0; i < 22; i++)
-        {
-            visableY[i] = true;
-            visableR[i] = true;
-            visableG[i] = true;
-            visableB[i] = true;
-        }
+
     }
 
     // Use this for initialization
@@ -77,7 +62,7 @@ public class main : MonoBehaviour
             print(blok);
         }
 
-        keyboard();
+        //keyboard();
     }
     //=========================================================================
 
@@ -177,6 +162,7 @@ public class main : MonoBehaviour
     //=========================================================================
 
     //=========================================================================
+    /*
     private void keyboard()
     {
         //--------------------------------starting the game
@@ -235,5 +221,6 @@ public class main : MonoBehaviour
             bloks.setcanChange();
         }
     }
+    */
     //=========================================================================
 }

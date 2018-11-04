@@ -33,7 +33,7 @@ public class bloks : MonoBehaviour {
         // settle color as black
         // settle visable as false
         obj = GameObject.Find("" + gameObject.name);
-        obj.GetComponent<Renderer>().material.color = Color.black;
+        obj.GetComponent<Renderer>().material.color = Color.red;
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
         {
@@ -44,14 +44,6 @@ public class bloks : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-        for(int i = 1; i < 21; i++)
-        {
-            for (int j = 1; j < 21; j++)
-            {
-
-            }
-        }
 
     }
     //=========================================================================
@@ -243,22 +235,8 @@ public class bloks : MonoBehaviour {
     //=========================================================================
 
     //=========================================================================
-    static private char IntToChar(int i)
-    {
-        char c = ' ';
-
-        if (i == 0)
-        {
-            c = '0';
-        }
-        else
-        {
-            c = (char)(i + 48);
-        }
-
-        return c;
-    }
-    private void gameobjectToZero()
+    
+    public void gameobjectToZero()
     {
         obj1 = null;
         obj2 = null;
@@ -266,29 +244,7 @@ public class bloks : MonoBehaviour {
         obj4 = null;
     }
 
-    private string blokCoordinate(char[] temp, int Xoffset, int Yoffset)
-    {
-        string newstring = "";
-
-        int tempX = 0;
-        int tempY = 0;
-
-        tempX = (temp[5] - '0') * 10 + (temp[6] - '0');
-        tempY = (temp[9] - '0') * 10 + (temp[10] - '0');
-
-        tempX = tempX + Xoffset;
-        tempY = tempY + Yoffset;
-
-        newstring += "blok(";
-        newstring += IntToChar(tempX / 10);
-        newstring += IntToChar(tempX % 10);
-        newstring += ")(";
-        newstring += IntToChar(tempY / 10);
-        newstring += IntToChar(tempY % 10);
-        newstring += ")";
-
-        return newstring;
-    }
+    
     //=========================================================================
 
     //=========================================================================
@@ -332,8 +288,8 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -368,8 +324,8 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -404,8 +360,8 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -441,8 +397,8 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -478,9 +434,9 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, -2, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -554,9 +510,9 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, -2, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -630,10 +586,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
-        obj4 = GameObject.Find(blokCoordinate(temp, 2, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, -2, 0));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 2, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -688,10 +644,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
-        obj3 = GameObject.Find(blokCoordinate(temp, 0, -2));
-        obj4 = GameObject.Find(blokCoordinate(temp, 0, 2));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -2));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 2));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -746,10 +702,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj2 = GameObject.Find(blokCoordinate(temp, 1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, -2, 0));
-        obj4 = GameObject.Find(blokCoordinate(temp, 2, 0));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, -2, 0));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 2, 0));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -805,10 +761,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, 0, 1));
-        obj3 = GameObject.Find(blokCoordinate(temp, 0, -2));
-        obj4 = GameObject.Find(blokCoordinate(temp, 0, 2));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -2));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 2));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
@@ -864,10 +820,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, 1, 0));
-        obj4 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(false);
         foreach (MeshRenderer m in marr)
@@ -922,10 +878,10 @@ public class bloks : MonoBehaviour {
         char[] temp = new char[objName.Length];
         temp = objName;
 
-        obj1 = GameObject.Find(blokCoordinate(temp, 0, -1));
-        obj2 = GameObject.Find(blokCoordinate(temp, -1, 0));
-        obj3 = GameObject.Find(blokCoordinate(temp, 1, 0));
-        obj4 = GameObject.Find(blokCoordinate(temp, 0, 1));
+        obj1 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, -1));
+        obj2 = GameObject.Find(methodsLib.blokCoordinate(temp, -1, 0));
+        obj3 = GameObject.Find(methodsLib.blokCoordinate(temp, 1, 0));
+        obj4 = GameObject.Find(methodsLib.blokCoordinate(temp, 0, 1));
 
         MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer m in marr)
