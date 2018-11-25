@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class methodsLib : MonoBehaviour {
 
-    static public char IntToChar(int i)
+    public static char IntToChar(int i)
     {
         char c = ' ';
 
