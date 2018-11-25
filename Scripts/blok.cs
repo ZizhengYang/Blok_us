@@ -67,18 +67,11 @@ public class blok {
         return this.show;
     }
 
-    public void changeColor()
+    public void changeColor(int color)
     {
         if (fix == false)
         {
-            if (this.color == 4)
-            {
-                this.color = 1;
-            }
-            else
-            {
-                this.color++;
-            }
+            this.color = color;
         }
         else { }
     }

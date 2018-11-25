@@ -4,35 +4,43 @@ using UnityEngine;
 
 public class inPut : MonoBehaviour {
 
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        keyBoardInPut();
+        MouseInPut();
+    }
     public static void keyBoardInPut()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            display.setSideByKey(true);
+            main.setAngleByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            display.setSideByKey(false);
+            main.setAngleByKey(false);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            display.setAngleByKey(true);
+            main.setSideByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            display.setAngleByKey(false);
+            main.setSideByKey(false);
         }
+
+        //========================================
+
+
+
+        //========================================
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            main.player++;
-            if (main.player > 4)
-            {
-                main.player = 1;
-            }
+            main.setPlayerByKey();
         }
     }
 
@@ -40,8 +48,7 @@ public class inPut : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(1))
         {
-            display.findBlok();
-            print(display.getBlok());
+            
         }
 
         if (Input.GetMouseButtonDown(0))
