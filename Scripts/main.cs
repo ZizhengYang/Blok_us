@@ -53,12 +53,18 @@ public class main : MonoBehaviour
 
     private static void howToDisplay(int index, int side, int angle)
     {
+        switch (index)
+        {
 
+        }
     }
 
     private static void howToHide(int index, int side, int angle)
     {
+        switch (index)
+        {
 
+        }
     }
 
     public static void determine()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class display : MonoBehaviour {
+public class display {
 
     /* count which kind of blok is choosen
      * 
@@ -10,7 +10,7 @@ public class display : MonoBehaviour {
      * I woun't write all of them here
      * LOL
      */
-    static private int blok;
+    private int blok;
 
     /* which side is choosen
      * 
@@ -19,7 +19,7 @@ public class display : MonoBehaviour {
      * 
      * # some bloks may not have all sides
      */
-    static private int side;
+    private int side;
 
     /* which angle is choosen
      * 
@@ -30,7 +30,7 @@ public class display : MonoBehaviour {
      * 
      * # some bloks may not have all angles
      */
-    static private int angle;
+    private int angle;
 
     void Start()
     {
@@ -46,22 +46,22 @@ public class display : MonoBehaviour {
         angle = givenAngle;
     }
 
-    static public int getBlok()
+    public int getBlok()
     {
         return blok;
     }
 
-    static public int getSide()
+    public int getSide()
     {
         return side;
     }
 
-    static public int getAngle()
+    public int getAngle()
     {
         return angle;
     }
     
-    static public void setBlokByKey()
+    public void setBlokByKey()
     {
         /*
         if (Input.GetMouseButtonDown(1))
@@ -78,7 +78,7 @@ public class display : MonoBehaviour {
         */
     }
 
-    static public void setSideByKey(bool i)
+    public void setSideByKey(bool i)
     {
         if (i)
         {
@@ -98,7 +98,7 @@ public class display : MonoBehaviour {
         }
     }
 
-    static public void setAngleByKey(bool i)
+    public void setAngleByKey(bool i)
     {
         if (i)
         {
@@ -118,7 +118,7 @@ public class display : MonoBehaviour {
         }
     }
 
-    static public void findBlok()
+    public void findBlok()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
