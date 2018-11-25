@@ -57,5 +57,14 @@ public class howCameraMove : MonoBehaviour {
         {
             transform.Rotate(new Vector3(0, 0, -1 * palstance * Time.deltaTime));
         }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.Rotate(new Vector3(palstance * Time.deltaTime, 0, 0));
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            transform.Rotate(new Vector3(-1 * palstance * Time.deltaTime, 0, 0));
+        }
     }
 }

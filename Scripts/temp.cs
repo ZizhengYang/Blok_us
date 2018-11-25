@@ -15,7 +15,7 @@ public class temp : MonoBehaviour {
     // find the name of the GameObject described above
     private char[] objName = new char[12];
     private string ObjName;
-    private static Boolean canChange = true;
+    private static bool canChange = true;
     //=========================================================================
 
     //=========================================================================
@@ -52,14 +52,14 @@ public class temp : MonoBehaviour {
     //=========================================================================
     public void OnMouseEnter()
     {
-        whatIsCurrentColor(main.player, obj);
+        //whatIsCurrentColor(main.player, obj);
 
-        howToDisplay(main.blok, main.side, main.angle);
+        //howToDisplay(main.blok, main.side, main.angle);
     }
 
     public void OnMouseExit()
     {
-        howToHide(main.blok, main.side, main.angle);
+        //howToHide(main.blok, main.side, main.angle);
     }
     //=========================================================================
 

@@ -12,12 +12,14 @@ public class main : MonoBehaviour
      * 3: green round
      * 4: blue round
      */
-    public int player = 0;
+    public static int player = 0;
 
     /*
      * A Display type object
      */
-    public display d;
+    //public display d;
+
+    private GameObject[] objects = new GameObject[5];
 
     void Awake()
     {
@@ -31,42 +33,36 @@ public class main : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            display.findBlok();
 
-            print(display.getBlok());
-        }
-
-        //keyboard();
-    }
-
-    public void whatIsCurrentColor(int index, GameObject obj)
-    {
+        inPut.keyBoardInPut();
+        inPut.MouseInPut();
 
     }
 
-    private void howToDisplay(int index, int side, int angle)
+    public void OnMouseEnter()
     {
-
+        howToDisplay(display.getBlok(), display.getSide(), display.getAngle());
     }
 
-    private void howToHide(int index, int side, int angle)
+    public void OnMouseExit()
+    {
+        howToHide(display.getBlok(), display.getSide(), display.getAngle());
+    }
+
+    private static void howToDisplay(int index, int side, int angle)
     {
 
     }
 
-    private void keyboard()
+    private static void howToHide(int index, int side, int angle)
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            player++;
-            if (player > 4)
-            {
-                player = 1;
-            }
-        }
+
+    }
+
+    public static void determine()
+    {
+        
     }
 }

@@ -32,7 +32,7 @@ public class display : MonoBehaviour {
      */
     static private int angle;
 
-    public display()
+    void Start()
     {
         blok = 0;
         side = 1;
@@ -78,9 +78,9 @@ public class display : MonoBehaviour {
         */
     }
 
-    static public void setSideByKey()
+    static public void setSideByKey(bool i)
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (i)
         {
             side += 1;
             if (side > 2)
@@ -88,7 +88,7 @@ public class display : MonoBehaviour {
                 side = 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        else
         {
             side -= 1;
             if (side < 1)
@@ -98,9 +98,9 @@ public class display : MonoBehaviour {
         }
     }
 
-    static public void setAngleByKey()
+    static public void setAngleByKey(bool i)
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (i)
         {
             angle += 1;
             if (angle > 4)
@@ -108,7 +108,7 @@ public class display : MonoBehaviour {
                 angle = 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        else
         {
             angle -= 1;
             if (angle < 1)

@@ -31,8 +31,7 @@ public class bloks : MonoBehaviour {
 
     private static GameObject obj;
 
-    void Start()
-    {
+    void Start() {
         ObjName = gameObject.name;
         objName = ObjName.ToCharArray();
 
@@ -42,6 +41,14 @@ public class bloks : MonoBehaviour {
         foreach (MeshRenderer m in marr)
         {
             m.enabled = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if(fix == false)
+        {
+            changeColor(main.player);
         }
     }
 
