@@ -42,7 +42,13 @@ public class main : MonoBehaviour
      */
     private static int angle;
 
+    /*
+     * 
+     */
     private GameObject[] objects = new GameObject[5];
+    private static coordinate[] co = new coordinate[5];
+
+    private static blok[,] bloks = new blok[20,20];
 
     void Awake()
     {
@@ -50,6 +56,13 @@ public class main : MonoBehaviour
         blok = 0;
         side = 1;
         angle = 1;
+        for(int i = 0; i < 20; i++)
+        {
+            for(int j = 0; j < 20; j++)
+            {
+                bloks[i,j] = new blok();
+            }
+        }
     }
 
     // Use this for initialization
@@ -59,13 +72,25 @@ public class main : MonoBehaviour
         blok = 0;
         side = 1;
         angle = 1;
+        for (int i = 0; i < 20; i++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                bloks[i,j] = new blok();
+            }
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        
+        findBlok();
+
+        for(int i = 0; i < 5; i++)
+        {
+            objects[i] = GameObject.Find(methodsLib.findName(co[i]));
+        }
 
     }
 
@@ -100,6 +125,7 @@ public class main : MonoBehaviour
             case 8:
                 break;
             case 9:
+                main.co = blok9.getBloksNeedToChange(side, angle);
                 break;
             case 10:
                 break;
@@ -313,6 +339,13 @@ public class main : MonoBehaviour
                 angle = 4;
             }
         }
+    }
+
+    public static blok getABlok(coordinate c)
+    {
+        int x = c.getX();
+        int y = c.getY();
+        return main.bloks[x - 1,y - 1];
     }
 
 }

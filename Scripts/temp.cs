@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class temp : MonoBehaviour {
 
     //=========================================================================
@@ -111,38 +111,7 @@ public class temp : MonoBehaviour {
         }
         else if (index == 9)
         {
-            if (side == 1 && angle == 1)
-            {
-                S_Blok9_side1_angle1();
-            }
-            else if (side == 1 && angle == 2)
-            {
-                S_Blok9_side1_angle2();
-            }
-            else if (side == 1 && angle == 3)
-            {
-                S_Blok9_side1_angle3();
-            }
-            else if (side == 1 && angle == 4)
-            {
-                S_Blok9_side1_angle4();
-            }
-            else if (side == 2 && angle == 1)
-            {
-                S_Blok9_side2_angle1();
-            }
-            else if (side == 2 && angle == 2)
-            {
-                S_Blok9_side2_angle2();
-            }
-            else if (side == 2 && angle == 3)
-            {
-                S_Blok9_side2_angle3();
-            }
-            else if (side == 2 && angle == 4)
-            {
-                S_Blok9_side2_angle4();
-            }
+            
         }
         else if (index == 15)
         {
@@ -184,38 +153,7 @@ public class temp : MonoBehaviour {
         }
         else if (index == 9)
         {
-            if (side == 1 && angle == 1)
-            {
-                H_Blok9_side1_angle1();
-            }
-            else if (side == 1 && angle == 2)
-            {
-                H_Blok9_side1_angle2();
-            }
-            else if (side == 1 && angle == 3)
-            {
-                H_Blok9_side1_angle3();
-            }
-            else if (side == 1 && angle == 4)
-            {
-                H_Blok9_side1_angle4();
-            }
-            else if (side == 2 && angle == 1)
-            {
-                H_Blok9_side2_angle1();
-            }
-            else if (side == 2 && angle == 2)
-            {
-                H_Blok9_side2_angle2();
-            }
-            else if (side == 2 && angle == 3)
-            {
-                H_Blok9_side2_angle3();
-            }
-            else if (side == 2 && angle == 4)
-            {
-                H_Blok9_side2_angle4();
-            }
+            
         }
         else if (index == 15)
         {
@@ -944,3 +882,4 @@ public class temp : MonoBehaviour {
         canChange = false;
     }
 }
+*/
