@@ -98,6 +98,9 @@ public class Main : MonoBehaviour {
 
         for(int i = 0; i < coo.Length; i++)
         {
+
+            Debug.Log(i + " is success");
+
             int x = coo[i].getX() - 1;
             int y = coo[i].getY() - 1;
 
@@ -164,15 +167,15 @@ public class Main : MonoBehaviour {
                 return b1.requireToChange(i, j, co);
             case "blok2":
                 return b2.requireToChange(i, j, co);
-                /*
             case "blok3":
-                break;
+                return b3.requireToChange(i, j, co);
             case "blok4":
-                break;
+                return b4.requireToChange(i, j, co);
             case "blok5":
-                break;
+                return b5.requireToChange(i, j, co);
             case "blok6":
-                break;
+                return b6.requireToChange(i, j, co);
+                /*
             case "blok7":
                 break;
             case "blok8":
@@ -230,6 +233,18 @@ public class Main : MonoBehaviour {
                 dis.setSide(2);
             }
         }
+
+        for (int k = 0; k < 20; k++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                if (!b[k, j].getFix())
+                {
+                    b[k, j].setShow(false);
+                }
+            }
+        }
+
     }
 
     public static void setAngleByKey(bool i)
@@ -250,6 +265,18 @@ public class Main : MonoBehaviour {
                 dis.setAngle(4);
             }
         }
+
+        for (int k = 0; k < 20; k++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                if (!b[k, j].getFix())
+                {
+                    b[k, j].setShow(false);
+                }
+            }
+        }
+
     }
 
 }
