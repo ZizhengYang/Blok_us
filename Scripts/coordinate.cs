@@ -3,6 +3,12 @@
     private int X;
     private int Y;
 
+    public coordinate()
+    {
+        this.X = -10;
+        this.Y = -10;
+    }
+
     public coordinate(int givenX, int givenY)
     {
         this.X = givenX;
