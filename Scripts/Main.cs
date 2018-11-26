@@ -130,6 +130,8 @@ public class Main : MonoBehaviour {
         return new DisplayWay(str);
     }
 
+    // Need some judgement here !!!
+    // :2
     public void determine()
     {
         for (int i = 0; i < 20; i++)
@@ -175,23 +177,23 @@ public class Main : MonoBehaviour {
                 return b5.requireToChange(i, j, co);
             case "blok6":
                 return b6.requireToChange(i, j, co);
-                /*
             case "blok7":
-                break;
+                return b7.requireToChange(i, j, co);
             case "blok8":
-                break;
+                return b8.requireToChange(i, j, co);
             case "blok9":
-                break;
+                return b9.requireToChange(i, j, co);
             case "blok10":
-                break;
+                return b10.requireToChange(i, j, co);
             case "blok11":
-                break;
+                return b11.requireToChange(i, j, co);
             case "blok12":
-                break;
+                return b12.requireToChange(i, j, co);
             case "blok13":
-                break;
+                return b13.requireToChange(i, j, co);
             case "blok14":
-                break;
+                return b14.requireToChange(i, j, co);
+                /*
             case "blok15":
                 break;
             case "blok16":
@@ -206,11 +208,11 @@ public class Main : MonoBehaviour {
                 break;
             case "blok21":
                 break;
-                
+
             default:
                 return new coordinate[0];
                 break;
-                */
+                    */
         }
         return b1.requireToChange(i, j, co);
     }
