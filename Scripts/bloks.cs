@@ -5,31 +5,22 @@ using UnityEngine;
 
 public class bloks : MonoBehaviour {
 
-    // find the name of the GameObject described above
-    private char[] objName = new char[12];
-    private string ObjName;
-
+    private string objName;
     private GameObject obj;
+    private coordinate co;
 
-    void Start() {
-        ObjName = gameObject.name;
-        objName = ObjName.ToCharArray();
-
-        obj = GameObject.Find("" + gameObject.name);
-        obj.GetComponent<Renderer>().material.color = Color.red;
-        MeshRenderer[] marr = obj.GetComponentsInChildren<MeshRenderer>(true);
-        foreach (MeshRenderer m in marr)
-        {
-            m.enabled = false;
-        }
+    void Start()
+    {
+        objName = gameObject.name;
+        obj = GameObject.Find(objName);
+        co = StaticMethodLib.stringTOcoordinate(objName);
     }
-
     void FixedUpdate()
     {
-        this.updateColor(main.getABlok(methodsLib.blokCoordinate(objName)).getColor());
-        this.updateDisplayStatus(main.getABlok(methodsLib.blokCoordinate(objName)).getShow());
+        DisplayBlok dis = Main.findDisplayBlok(co);
 
-        //b.changeColor();
+        this.updateColor(dis.getColor());
+        this.updateDisplayStatus(dis.getShow());
     }
 
     public void updateColor(int color)
@@ -72,12 +63,5 @@ public class bloks : MonoBehaviour {
             }
         }
     }
-
-    public void updateFix()
-    {
-
-        main.getABlok(methodsLib.blokCoordinate(objName)).changeFix();
-        
-    }
-
+    
 }

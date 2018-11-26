@@ -11,28 +11,28 @@ public class inPut : MonoBehaviour {
     void FixedUpdate()
     {
         keyBoardInPut();
-        MouseInPut();
+        // MouseInPut();
     }
     public void keyBoardInPut()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            main.setAngleByKey(true);
+            //main.setAngleByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            main.setAngleByKey(false);
+            //main.setAngleByKey(false);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            main.setSideByKey(true);
+            //main.setSideByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            main.setSideByKey(false);
+            //main.setSideByKey(false);
         }
 
         //========================================
@@ -83,34 +83,6 @@ public class inPut : MonoBehaviour {
         else if (Input.GetKey(KeyCode.F))
         {
             transform.Rotate(new Vector3(-1 * palstance * Time.deltaTime, 0, 0));
-        }
-
-        //========================================
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            main.setPlayerByKey();
-        }
-    }
-
-    public void MouseInPut()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log(hit.transform.name);
-                blokAbstract.setblokName(hit.transform.name);
-            }
-
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            main.determine();
         }
     }
 }
