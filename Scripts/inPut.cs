@@ -17,22 +17,22 @@ public class inPut : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //main.setAngleByKey(true);
+            Main.setAngleByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //main.setAngleByKey(false);
+            Main.setAngleByKey(false);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //main.setSideByKey(true);
+            Main.setSideByKey(true);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //main.setSideByKey(false);
+            Main.setSideByKey(false);
         }
 
         //========================================

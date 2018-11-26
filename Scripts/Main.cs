@@ -46,6 +46,7 @@ public class Main : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -85,7 +86,7 @@ public class Main : MonoBehaviour {
 
             if (Physics.Raycast(ray2, out hit2))
             {
-                // Debug.Log(hit.transform.name);
+                Debug.Log(hit.transform.name);
                 dis = Main.ResetDisplayWay(hit2.transform.name);
                 // blokAbstract.setblokName(hit.transform.name);
             }
@@ -161,7 +162,6 @@ public class Main : MonoBehaviour {
         {
             case "blok1":
                 return b1.requireToChange(i, j, co);
-                
             case "blok2":
                 return b2.requireToChange(i, j, co);
                 /*
@@ -210,6 +210,46 @@ public class Main : MonoBehaviour {
                 */
         }
         return b1.requireToChange(i, j, co);
+    }
+
+    public static void setSideByKey(bool i)
+    {
+        if (i)
+        {
+            dis.setSide(dis.getSide()+1);
+            if (dis.getSide() > 2)
+            {
+                dis.setSide(1);
+            }
+        }
+        else
+        {
+            dis.setSide(dis.getSide() - 1);
+            if (dis.getSide() < 1)
+            {
+                dis.setSide(2);
+            }
+        }
+    }
+
+    public static void setAngleByKey(bool i)
+    {
+        if (i)
+        {
+            dis.setAngle(dis.getAngle() + 1);
+            if (dis.getAngle() > 4)
+            {
+                dis.setAngle(1);
+            }
+        }
+        else
+        {
+            dis.setAngle(dis.getAngle() - 1);
+            if (dis.getAngle() < 1)
+            {
+                dis.setAngle(4);
+            }
+        }
     }
 
 }

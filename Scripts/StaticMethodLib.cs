@@ -22,6 +22,11 @@ public class StaticMethodLib : MonoBehaviour
         return c;
     }
 
+    public static coordinate onlyDoOffset(coordinate co, int Xoffset, int Yoffset)
+    {
+        return new coordinate(co.getX() + Xoffset, co.getY() + Yoffset);
+    }
+
     public static string doOffset(string temp, int Xoffset, int Yoffset)
     {
         string newstring = "";
