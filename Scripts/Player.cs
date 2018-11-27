@@ -8,8 +8,8 @@ public class Player
 
     /* count which is playing
      * 
-     * 1: yellow round
-     * 2: red round
+     * 1: red round
+     * 2: yellow round
      * 3: green round
      * 4: blue round
      */

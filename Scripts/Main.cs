@@ -47,6 +47,11 @@ public class Main : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            this.determine();
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -86,7 +91,7 @@ public class Main : MonoBehaviour {
 
             if (Physics.Raycast(ray2, out hit2))
             {
-                Debug.Log(hit.transform.name);
+                // Debug.Log(hit.transform.name);
                 dis = Main.ResetDisplayWay(hit2.transform.name);
                 // blokAbstract.setblokName(hit.transform.name);
             }
@@ -99,23 +104,18 @@ public class Main : MonoBehaviour {
         for(int i = 0; i < coo.Length; i++)
         {
 
-            Debug.Log(i + " is success");
+            // Debug.Log(i + " is success");
 
             int x = coo[i].getX() - 1;
             int y = coo[i].getY() - 1;
 
-            Debug.Log("$ "+x+" "+y);
+            // Debug.Log("$ "+x+" "+y);
 
             if (x >= 20 || x < 0) { }
             else if (y >= 20 || y < 0) { }
             else{
                 b[x, y].setShow(true);
             }
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            determine();
         }
 
     }
@@ -134,31 +134,65 @@ public class Main : MonoBehaviour {
     // :2
     public void determine()
     {
-        for (int i = 0; i < 20; i++)
+        coordinate[] coo = new coordinate[5];
+        coo = findBlok(dis.getBlok(), dis.getSide(), dis.getAngle(), co);
+        bool allWasWell = true;
+
+        for (int i = 0; i < coo.Length; i++)
         {
-            for (int j = 0; j < 20; j++)
+            int x = coo[i].getX() - 1;
+            int y = coo[i].getY() - 1;
+            if(x >= 0 && y >= 0 && x < 20 && y < 20)
             {
-                if (b[i, j].getShow() == true)
+                Debug.Log(x + " - " + y);
+                if(b[x, y].getFix() == true)
                 {
-                    b[i, j].setFix(true);
+                    Debug.Log("x " + x + " - " + y);
+                    allWasWell = false;
+                    break;
                 }
             }
-        }
-
-        for (int i = 0; i < 20; i++)
-        {
-            for (int j = 0; j < 20; j++)
+            else if(x < -140 && y < -140)
             {
-                if (b[i, j].getFix() == false)
+                continue;
+            }
+            else
+            {
+                allWasWell = false;
+                break;
+            }
+        }
+        Debug.Log(allWasWell);
+        if (allWasWell)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 20; j++)
                 {
-                    b[i, j].setColor(b[i, j].getColor()+1);
-                    if(b[i, j].getColor() > 4)
+                    if (b[i, j].getShow() == true)
                     {
-                        b[i, j].setColor(1);
+                        b[i, j].setFix(true);
                     }
                 }
             }
-        }
+
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 20; j++)
+                {
+                    if (b[i, j].getFix() == false)
+                    {
+                        // Debug.Log("current blok's color is : " + b[i, j].getColor());
+                        b[i, j].setColor(b[i, j].getColor() + 1);
+                        if (b[i, j].getColor() > 4)
+                        {
+                            b[i, j].setColor(1);
+                        }
+                        // Debug.Log("current blok's color then become : " + b[i, j].getColor());
+                    }
+                }
+            }
+        } else { }
     }
     
     public coordinate[] findBlok(string str, int i, int j, coordinate co)
@@ -193,26 +227,22 @@ public class Main : MonoBehaviour {
                 return b13.requireToChange(i, j, co);
             case "blok14":
                 return b14.requireToChange(i, j, co);
-                /*
             case "blok15":
-                break;
+                return b15.requireToChange(i, j, co);
             case "blok16":
-                break;
+                return b16.requireToChange(i, j, co);
             case "blok17":
-                break;
+                return b17.requireToChange(i, j, co);
             case "blok18":
-                break;
+                return b18.requireToChange(i, j, co);
             case "blok19":
                 break;
             case "blok20":
-                break;
+                return b20.requireToChange(i, j, co);
             case "blok21":
                 break;
-
             default:
-                return new coordinate[0];
                 break;
-                    */
         }
         return b1.requireToChange(i, j, co);
     }

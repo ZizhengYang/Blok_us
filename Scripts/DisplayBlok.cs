@@ -8,6 +8,13 @@ public class DisplayBlok
     private bool show;
     private bool fix;
 
+    public DisplayBlok()
+    {
+        this.color = 1;
+        this.show = false;
+        this.fix = false;
+    }
+
     public int getColor()
     {
         return this.color;
